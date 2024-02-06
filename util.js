@@ -12,7 +12,7 @@ module.exports = {
     openCode:function(url) {
         if(typeof process.env.GITPOD_HOST !== 'undefined') {
             const { exec } = require('child_process'); // Required to open Previews in GitPod Environment
-            exec('gp open'+url);
+            exec('gp open '+url);
         } else {
             console.log("Open in Editor:",url);
         }
