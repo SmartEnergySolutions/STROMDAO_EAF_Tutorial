@@ -5,6 +5,6 @@
     },
     "lesson_2": {
         "title":"Energy Settlement",
-        "script":"2_settlements.js"
+        "script":"2_settlement.js"
     }
 }
