@@ -16,7 +16,7 @@ $(document).ready(function() {
     $('#loadedUrl').html(decodeURI($.urlParam('url')));
       
     if($.urlParam('md')) {
-        $.get($.urlParam('md'), function(data) {
+        $.get($.urlParam('md')+".md", function(data) {
             $('#markdown-renderer').html(marked.parse(data));
         })
     }
@@ -25,5 +25,4 @@ $(document).ready(function() {
         loadJSON();
     })
     loadJSON();
-
 })

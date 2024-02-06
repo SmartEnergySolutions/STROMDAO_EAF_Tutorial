@@ -9,7 +9,7 @@ const app = async function() {
     const result = await eaf_node.call("metering.updateReading",{time:new Date().getTime(),meterId:"tutorial1",reading:first_meter_reading});
     
     // Open Preview in Gitpod
-    require("./util.js").openUrl('http://localhost:3000/json.html?url=/api/readings_model/');
+    require("./util.js").openUrl('http://localhost:3000/json.html?url=/api/readings_model/&md=lesson_1');
 }
 
 app();
