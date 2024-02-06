@@ -6,9 +6,9 @@ $.urlParam = function (name) {
 }
 
 $(document).ready(function() {
-    $('#loadedUrl').html($.urlParam('url'));
+    $('#loadedUrl').html(decodeURI($.urlParam('url')));
     $.getJSON($.urlParam('url'), function(data) {
-        $('#loadedUrl').html($.urlParam('url'));
+        $('#loadedUrl').html(decodeURI($.urlParam('url'));
         $('#json-renderer').jsonViewer(data);
     })    
 

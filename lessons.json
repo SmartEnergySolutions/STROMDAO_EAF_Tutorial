@@ -1,0 +1,6 @@
+{
+    "lesson_1": {
+        "title":"Update Meter Readings",
+        "script":"1_updateReading.js"
+    }
+}
