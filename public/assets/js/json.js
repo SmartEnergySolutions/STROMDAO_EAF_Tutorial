@@ -10,7 +10,7 @@ $(document).ready(function() {
     const loadJSON = function() {
         $.getJSON($.urlParam('url'), function(data) {
             $('#loadedUrl').html(decodeURI($.urlParam('url')));
-            $('#json-renderer').jsonViewer(data);
+            $('#json-renderer').jsonViewer(data,{collapsed:true});
         }) 
     }
     $('#loadedUrl').html(decodeURI($.urlParam('url')));
