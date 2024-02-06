@@ -10,7 +10,7 @@ const app = async function() {
     const result = await eaf_node.call("metering.updateReading",{time:new Date().getTime(),meterId:"tutorial1",reading:first_meter_reading});
     
     // Open Preview in Gitpod
-    exec('gp preview http://localhost:3000/api/readings_model/');
+    exec('gp preview http://localhost:3000/json.html?url=/api/readings_model/');
 }
 
 app();
