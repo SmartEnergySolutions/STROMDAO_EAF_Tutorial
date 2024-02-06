@@ -2,9 +2,10 @@
   "name": "stromdao_eaf_tutorial",
   "version": "1.0.0",
   "description": "Step by Step tutorial for the Energy Application Framework",
-  "main": "index.js",
+  "main": "0_start.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./0_start.js"
   },
   "author": "",
   "license": "MIT",
