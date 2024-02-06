@@ -2,5 +2,9 @@
     "lesson_1": {
         "title":"Update Meter Readings",
         "script":"1_updateReading.js"
+    },
+    "lesson_2": {
+        "title":"Energy Settlement",
+        "script":"2_settlements.js"
     }
 }

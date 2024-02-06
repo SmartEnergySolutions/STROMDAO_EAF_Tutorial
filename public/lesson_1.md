@@ -95,3 +95,32 @@ We will now have a deeper look at what the `metering.updateReading` call has in 
 - `processed`: Indicate if the Meter Reading could been processed (for settlement, debit, etc...)
 - `consumption`: Since previous Meter Reading.
 - `clearingJWT`: A signed JSON WebToken a third party may use to prove transmission of readings.  
+
+#### Hints for `metering.updateReading`
+- If `processed: false` a property "debug" exists in the result object giving you a hint why processing was not done.
+- Typical causes are: 
+ - To frequent reading updated
+ - Reading lower than previous reading
+ - Downstream processing would fail (for example no dynamic price information available)
+
+## Conclusion 
+In conclusion, this lesson provided an overview of how to update meter readings using the STROMDAO Energy Application Framework (EAF). The objective was to provide a random meter reading and view the results using the EAF API. The implementation involved generating a meter reading, creating an EAF node, and calling the `metering.updateReading` method with the necessary parameters.
+
+The lesson covered two approaches for updating meter readings: via code and via the REST API. The code approach involved using the EAF node to call the `metering.updateReading` method, while the REST API approach used a curl command to set a meter reading.
+
+It was mentioned that at the moment, there is no defined storage (database), so all data will be lost upon restarting the EAF. This is beneficial for testing purposes.
+
+The lesson also highlighted the importance of working with results. Most microservice calls return a result object, which can be stored and utilized. The lesson demonstrated how to store the result of the `metering.updateReading` call and view it in the Microservice Output card.
+
+The result of the `metering.updateReading` call was explained in detail. The result object includes information such as the meterId, reading, time, CO2 emissions, virtual sub-meter readings, processed status, consumption since the previous reading, and a clearing JWT.
+
+For the `metering.updateReading` call, it was mentioned that if the processed status is false, a "debug" property exists in the result object, providing a hint as to why processing was not done. Typical causes include frequent reading updates, readings lower than the previous reading, and the unavailability of dynamic price information.
+
+## Next Step 
+[Settlement microservices](https://energy.js.org/docs/service_settlement.html) play a crucial role in the energy industry, enabling efficient and accurate reconciliation of energy transactions between suppliers, generators, and customers. These microservices are responsible for handling the complex processes involved in energy settlements, ensuring that the energy purchased from generators matches the energy sold to customers. 
+
+`npm start lesson_2`
+
+
+
+
