@@ -1,0 +1,11 @@
+tasks:
+    - name: Tutorial
+      init: |
+        npm install ; npm install -g eaf-admin-client; npm install -g eaf-amr-client; npm install -g stromdao-eaf
+      command: |
+        stromdao-eaf
+ports:
+    - name: Demo UI
+      port: 3000
+      onOpen: open-preview
+      visibility: private
