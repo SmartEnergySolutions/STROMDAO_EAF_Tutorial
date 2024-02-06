@@ -3,8 +3,8 @@ const lesson = 'lesson_2';
 
 const app = async function() {
     // Generate test data
-    const startingTime = new Date().getTime() - 86400000;
-    const endTime = new Date().getTime();
+    const startingTime = new Date().getTime();
+    const endTime = new Date().getTime()+86400000;
     let consumption = Math.round(Math.random()*10000);
 
     // Create EAF Node and call metering.updateReading
