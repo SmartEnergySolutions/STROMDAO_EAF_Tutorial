@@ -125,7 +125,7 @@ In the context of electricity settlement reform, the reconciliation of differenc
 Overall, settlements are integral to the Energy Application Framework as they facilitate the efficient distribution and pricing of energy consumption. They contribute to the development of sustainable applications and support the transition towards a smarter and more flexible energy system.
 
 ## Next Step: Practical Clearing Process in the Energy Industry
-To gain a closer look at the clearing process in the energy industry, we will utilize the microservice methods `metering.updateReading`` and `settlement.retrieve` to perform a practical clearing in the background. This will allow us to retrieve an actual clearing of an electricity meter.
+To gain a closer look at the clearing process in the energy industry, we will utilize the microservice methods `metering.updateReading` and `settlement.retrieve` to perform a practical clearing in the background. This will allow us to retrieve an actual clearing of an electricity meter.
 
 `npm start lesson_3`
 
