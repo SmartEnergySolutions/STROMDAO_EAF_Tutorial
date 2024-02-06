@@ -16,6 +16,10 @@ module.exports = {
         } else {
             console.log("Open in Editor:",url);
         }
+    },
+    storeResult:function(lesson,data) {
+        const fs = require("fs");
+        fs.writeFileSync("public/"+lesson+".out.json",JSON.stringify(data));
     }
 
 }

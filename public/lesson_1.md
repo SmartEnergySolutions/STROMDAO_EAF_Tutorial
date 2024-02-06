@@ -54,6 +54,8 @@ This will use the REST API to set a meter reading for the meter `Tutorial3`. Ref
 
 #### Persistence Data
 At the moment we do not have a storage (database) defined. So everytime we restart the EAF all data will be lost. This is good for testing. Try it out by switching to the terminal tab which runs this session and restart the lesson. The `meterId` `Tutorial3` should not be in the result list.
- 
+
+#### Result Object
+Almost any microservice call returns a result object. At the moment we ignore this 
 
 

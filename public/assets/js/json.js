@@ -20,7 +20,11 @@ $(document).ready(function() {
             $('#markdown-renderer').html(marked.parse(data));
         })
     }
-
+    if($.urlParam('md')) {
+        $.getJSON($.urlParam('md')+".out.json", function(data) {
+            $('#json-out').jsonViewer(data);
+        })
+    } 
     $('#reloadPreview').click(function() {
         loadJSON();
     })
