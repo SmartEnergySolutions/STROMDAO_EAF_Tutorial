@@ -16,6 +16,9 @@ The actual code required to do this is:
 ```
 
 ### Steps
+
+#### Meter Readings via Code
+
 ```
 const eaf_node = await EAF.node();
 ```
@@ -37,4 +40,20 @@ The parameters are specific to each method and service. In this case we need:
 }
 ```
 
-Change the meterId from `tutorial1` to `tutorial2` in the `1_updateReading.js` and restart this lesson with `npm start lesson_1`.
+Change the meterId from `tutorial1` to `tutorial2` in the `1_updateReading.js` and restart this lesson with `npm start lesson_1`. Validate in the results view at the bottom of this page if the field `meterId` is now changed.
+
+Throughout the tutorial we will use this approach of using small NodeJS scripts to work with the EAF.
+
+#### Meter Readings via REST API
+Open a second terminal tab and type in:
+```
+curl -X POST -d "meterId=Tutorial3&time=1234&reading=4567" "http://localhost:3000/api/metering/updateReading"
+```
+
+This will use the REST API to set a meter reading for the meter `Tutorial3`. Refresh the result view below to see if it got listed.
+
+#### Persistence Data
+At the moment we do not have a storage (database) defined. So everytime we restart the EAF all data will be lost. This is good for testing. Try it out by switching to the terminal tab which runs this session and restart the lesson. The `meterId` `Tutorial3` should not be in the result list.
+ 
+
+
