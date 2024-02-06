@@ -18,7 +18,7 @@ const app = async function() {
     result.call2 = await eaf_node.call("settlement.retrieve",{
         startTime: startingTime,
         endTime: endTime,
-        consumption: Math.random(consumption/2)    
+        consumption: Math.round(consumption/2)    
     });
     require("./util.js").storeResult(lesson,result);
 
