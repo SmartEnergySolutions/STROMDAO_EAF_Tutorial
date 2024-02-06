@@ -5,14 +5,20 @@ const app = async function() {
     // Generate test data
     const startingTime = new Date().getTime() - 86400000;
     const endTime = new Date().getTime();
-    const consumption = Math.round(Math.random()*10000);
+    let consumption = Math.round(Math.random()*10000);
 
     // Create EAF Node and call metering.updateReading
     const eaf_node = await EAF.node();
-    const result = await eaf_node.call("settlement.retrieve",{
+    const result = {};
+    result.call1 = await eaf_node.call("settlement.retrieve",{
         startTime: startingTime,
         endTime: endTime,
         consumption: consumption    
+    });
+    result.call2 = await eaf_node.call("settlement.retrieve",{
+        startTime: startingTime,
+        endTime: endTime,
+        consumption: Math.random(consumption/2)    
     });
     require("./util.js").storeResult(lesson,result);
 
