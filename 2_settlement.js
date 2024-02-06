@@ -14,7 +14,7 @@ const app = async function() {
         endTime: endTime,
         consumption: consumption    
     });
-    require("./util.js").storeResult(result);
+    require("./util.js").storeResult(lesson,result);
 
     // Open Preview in Gitpod
     require("./util.js").openUrl('http://localhost:3000/json.html?url=/api/readings_model/&md='+lesson);
