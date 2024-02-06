@@ -18,8 +18,10 @@ module.exports = {
         }
     },
     storeResult:function(lesson,data) {
-        const fs = require("fs");
-        fs.writeFileSync("public/"+lesson+".out.json",JSON.stringify(data));
+        if(typeof data !== 'undefined') {
+            const fs = require("fs");
+            fs.writeFileSync("public/"+lesson+".out.json",JSON.stringify(data));
+        }
     }
 
 }
