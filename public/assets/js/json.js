@@ -6,10 +6,24 @@ $.urlParam = function (name) {
 }
 
 $(document).ready(function() {
+
+    const loadJSON = function() {
+        $.getJSON($.urlParam('url'), function(data) {
+            $('#loadedUrl').html(decodeURI($.urlParam('url')));
+            $('#json-renderer').jsonViewer(data);
+        }) 
+    }
     $('#loadedUrl').html(decodeURI($.urlParam('url')));
-    $.getJSON($.urlParam('url'), function(data) {
-        $('#loadedUrl').html(decodeURI($.urlParam('url')));
-        $('#json-renderer').jsonViewer(data);
-    })    
+      
+    if($.urlParam('md')) {
+        $.get($.urlParam('md'), function(data) {
+            $('#markdown-renderer').html(marked.parse(data));
+        })
+    }
+
+    $('#reloadPreview').click(function() {
+        loadJSON();
+    })
+    loadJSON();
 
 })

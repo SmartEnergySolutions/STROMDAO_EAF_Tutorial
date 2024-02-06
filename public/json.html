@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>EAF Tutorial</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
     <link rel="stylesheet" href="assets/css/jquery.json-viewer.css">
 </head>
 
@@ -21,10 +23,15 @@
         </nav>
     </header>
     <div class="container">
-        <h3 id="loadedUrl">-</h3>
         <div class="card" style="margin-bottom: 25px;">
             <div class="card-body">
-                <div id="json-renderer"></div>
+                <div id="markdown-renderer"></div>
+            </div>
+        </div>
+        <h3>Result:&nbsp;<span id="loadedUrl">-</span><button class="btn btn-dark float-end" id="reloadPreview" type="button"><i class="fas fa-redo"></i></button></h3>
+        <div class="card" style="margin-bottom: 25px;">
+            <div class="card-body">
+                <div id="json-renderer-1"></div>
             </div>
         </div>
         <footer class="footer mt-auto py-3 bg-white" style="margin-bottom: 25px;">
@@ -58,6 +65,7 @@
     </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/marked.js"></script>
     <script src="assets/js/jquery.json-viewer.js"></script>
     <script src="assets/js/index.js"></script>
     <script src="assets/js/json.js"></script>
