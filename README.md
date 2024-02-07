@@ -1,5 +1,5 @@
 # STROMDAO EAF Tutorial
-Step by Step tutorial for the Energy Application Framework
+Step by Step tutorial for the [Energy Application Framework](https://energy.js.org/)
 
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/SmartEnergySolutions/STROMDAO_EAF_Tutorial)
