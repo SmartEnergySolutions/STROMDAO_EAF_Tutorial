@@ -6,5 +6,9 @@
     "lesson_2": {
         "title":"Energy Settlement",
         "script":"2_settlement.js"
+    },
+    "lesson_3": {
+        "title":"Clearing Process",
+        "script":"3_clearing.js"
     }
 }
