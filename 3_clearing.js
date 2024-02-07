@@ -33,7 +33,7 @@ const app = async function() {
     require("./util.js").storeResult(lesson,result);
 
     // Open Preview in Gitpod
-    require("./util.js").openUrl('http://localhost:3000/json.html?url=/api/tariff/labels/&md='+lesson);
+    require("./util.js").openUrl('http://localhost:3000/json.html?url=/api/clearing/retrieve?meterId=clearingMeter&md='+lesson);
 }
 
 app();
