@@ -1,4 +1,4 @@
-# STROMDAO_EAF_Tutorial
+# STROMDAO EAF Tutorial
 Step by Step tutorial for the Energy Application Framework
 
 
@@ -32,3 +32,25 @@ Explore the concept of clearings as a "digital identity" represented by a DID do
 - The practical use of the Clearing JWT as a Clearing Identity can prevent duplicate payments and facilitate efficient and transparent transactions.
 
 `npm start lesson_3`
+
+## License
+
+Distributed under the Apache-2.0 License. See [License](./LICENSE) for more information.
+
+
+## [Maintainer / Imprint](https://github.com/energychain/STROMDAO_EAFs/blob/main/IMPRINT.md)
+
+<addr>
+STROMDAO GmbH  <br/>
+Gerhard Weiser Ring 29  <br/>
+69256 Mauer  <br/>
+Germany  <br/>
+  <br/>
++49 6226 968 009 0  <br/>
+  <br/>
+dev@stromdao.com  <br/>
+  <br/>
+Handelsregister: HRB 728691 (Amtsgericht Mannheim)<br/>
+  <br/>
+https://stromdao.de/<br/>
+</addr>
