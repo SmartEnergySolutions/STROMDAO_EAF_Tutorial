@@ -8,12 +8,12 @@ $.urlParam = function (name) {
 $(document).ready(function() {
 
     const loadJSON = function() {
-        $.getJSON($.urlParam('url'), function(data) {
-            $('#loadedUrl').html(decodeURI($.urlParam('url')));
+        $.getJSON(decodeURIComponent($.urlParam('url')), function(data) {
+            $('#loadedUrl').html(decodeURIComponent($.urlParam('url')));
             $('#json-renderer').jsonViewer(data,{collapsed:true});
         }) 
     }
-    $('#loadedUrl').html(decodeURI($.urlParam('url')));
+    $('#loadedUrl').html(decodeURIComponent($.urlParam('url')));
       
     if($.urlParam('md')) {
         $.get($.urlParam('md')+".md", function(data) {
