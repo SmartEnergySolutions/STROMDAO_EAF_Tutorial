@@ -2,14 +2,16 @@ const EAF = require("stromdao-eaf");
 const lesson = 'lesson_2';
 
 const app = async function() {
+    // Create EAF Node 
+    const eaf_node = await EAF.node();
+    const result = {};
+
     // Generate test data
     const startingTime = new Date().getTime();
     const endTime = new Date().getTime()+86400000;
     let consumption = Math.round(Math.random()*10000);
 
-    // Create EAF Node and call metering.updateReading
-    const eaf_node = await EAF.node();
-    const result = {};
+        
     result.call1 = await eaf_node.call("settlement.retrieve",{
         startTime: startingTime,
         endTime: endTime,
@@ -23,7 +25,7 @@ const app = async function() {
     require("./util.js").storeResult(lesson,result);
 
     // Open Preview in Gitpod
-    require("./util.js").openUrl('http://localhost:3000/json.html?url=/api/tariff/labels/&md='+lesson);
+    require("./util.js").openUrl('http://localhost:3000/json.html?url=/api/clearing/retrieve?meterId=clearingMeter&md='+lesson);
 }
 
 app();
