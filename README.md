@@ -33,6 +33,18 @@ Explore the concept of clearings as a "digital identity" represented by a DID do
 
 `npm start lesson_3`
 
+## Lesson 4: [Balancing Part 1](./public/lesson_4.md)
+This lesson provides learners with a comprehensive understanding of the basic concepts related to balancing in the energy sector. This lesson focuses on the creation of demo meters for testing, setting up rules, and understanding the difference between meters and balancing points. Additionally, learners gain hands-on experience by using microservices directly to configure balancing groups
+
+- Understand the importance of balancing in the energy sector and its role in ensuring grid stability and efficient energy distribution.
+- Create demo meters for testing purposes, allowing learners to simulate and analyze different scenarios related to balancing.
+Set up rules for balancing, enabling learners to define specific criteria and conditions for balancing operations.
+- Differentiate between meters and balancing points, understanding their respective roles and functionalities in the energy system.
+- Gain practical experience in configuring balancing groups using microservices, even though this approach is typically used in large-scale installations by grid operators or major utilities.
+- Recognize the benefits of using the web interface of the admin UI for balancing setup in smaller installations, where it is more suitable and user-friendly
+
+`npm start lesson_4`
+
 ## License
 
 Distributed under the Apache-2.0 License. See [License](./LICENSE) for more information.
