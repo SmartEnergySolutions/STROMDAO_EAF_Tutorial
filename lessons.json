@@ -10,5 +10,9 @@
     "lesson_3": {
         "title":"Clearing Process",
         "script":"3_clearing.js"
+    },
+    "lesson_4": {
+        "title":"Balancing - Part 1",
+        "script":"4_balancing_part1.js"
     }
 }
