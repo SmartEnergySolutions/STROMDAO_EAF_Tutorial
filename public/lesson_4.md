@@ -1,4 +1,4 @@
-# Energy Balancing
+# Energy Balancing (Part 1)
 
 ## Objective
 The objective of the "Balancing Part 1" lesson in the STROMDAO Energy Application Framework tutorial is to provide learners with a comprehensive understanding of the basic concepts related to balancing in the energy sector. This lesson focuses on the creation of demo meters for testing, setting up rules, and understanding the difference between meters and balancing points. Additionally, learners will gain hands-on experience by using microservices directly to configure balancing groups.
@@ -14,7 +14,7 @@ By the end of this lesson, learners should be able to:
 
 
 ## Implementation Balancing Rules
-Sample code in `4_balancing.js`:
+Sample code in `4_balancing_part1.js`:
 ```javascript
     result.rules.push(await eaf_node.call("asset.upsert",{
         assetId: 'balancingMeter0',
