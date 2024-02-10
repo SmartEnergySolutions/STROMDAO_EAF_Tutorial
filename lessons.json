@@ -14,5 +14,9 @@
     "lesson_4": {
         "title":"Balancing - Part 1",
         "script":"4_balancing_part1.js"
+    },
+    "lesson_5": {
+        "title":"Balancing - Part 2",
+        "script":"5_balancing_part2.js"
     }
 }
