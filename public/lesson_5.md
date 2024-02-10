@@ -3,8 +3,6 @@
 ## Objective
 In this lesson, our objective is to delve into the complexities of energy trading within the Energy Application Framework (EAF) and understand the mechanisms used to ensure accurate energy balancing without direct physical validation. As we move away from the simplicity of validating energy transactions via metered data, we encounter the challenge of achieving consensus on power transactions that occur beyond the physically observable grid, such as those mediated through exchanges or third-party arrangements. The lesson will cover the key concepts and tools that facilitate trust and validation in such scenarios, illustrating how these mechanisms are crucial for maintaining a reliable and consistent energy balance within the digital infrastructure of the EAF.
 
-// Need to add chapter about sealing of balances!
-
 ## Implementation Balancing Part 2
 Sample code in `5_balancing.js`:
 ```javascript
@@ -60,6 +58,8 @@ In the context of the STROMDAO Energy Application Framework (EAF), peer-to-peer 
 Here are the steps of the example in detail:
 
 1.  **Balancing Rules for the Production Unit:**
+    -   A rule is set up to assign the electricity production unit, `production1`, to the seller `seller1`. This ensures that the electricity produced is credited to `seller1`'s balance.
+
 ```javascript
     result.rules.push(await eaf_node.call("asset.upsert",{
         assetId: 'production1',
@@ -69,9 +69,10 @@ Here are the steps of the example in detail:
         }
     }));
 ```
-    -   A rule is set up to assign the electricity production unit, `production1`, to the seller `seller1`. This ensures that the electricity produced is credited to `seller1`'s balance.
 
 2.  **Rule to Maintain Balance:**  
+    -   `seller1` acts as a balancing point by delivering electricity to and from `bigbalancer`. Each balancing point must be balanced at each billing period to be settled validly.
+
 ```javascript
     result.rules.push(await eaf_node.call("asset.upsert",{
         assetId: 'seller1',
@@ -82,9 +83,10 @@ Here are the steps of the example in detail:
         }
     }));
 ```
-    -   `seller1` acts as a balancing point by delivering electricity to and from `bigbalancer`. Each balancing point must be balanced at each billing period to be settled validly.
 
 3.  **Definition of the Power Purchase Agreement:**  
+    -   An electricity supply contract between the seller and buyer is defined. `seller1` commits to delivering a specific amount of electricity to `buyer1`.
+
 ```javascript
     result.rules.push(await eaf_node.call("contract.add",{
         assetId: "seller1",
@@ -97,9 +99,10 @@ Here are the steps of the example in detail:
         balanced:0
     }));
 ```
-    -   An electricity supply contract between the seller and buyer is defined. `seller1` commits to delivering a specific amount of electricity to `buyer1`.
 
 4.  **Registration of Electricity Generation:**
+    -   The production meter `production1` records a generation of electricity for a defined epoch.
+
 ```javascript
     result.rules.push(await eaf_node.call("balancing.addSettlement",{
         meterId: 'production1',
@@ -108,9 +111,10 @@ Here are the steps of the example in detail:
         label: "virtual_1",
     }));
 ```
-    -   The production meter `production1` records a generation of electricity for a defined epoch.
 
 5.  **Sealing the Balances:**
+    -   The balances for `production1` and `seller1` are sealed for the relevant epoch, ensuring no retrospective changes and finalizing the settlement.
+
 ```javascript
     result.rules.push(await eaf_node.call("balancing.seal",{
         assetId: 'production1',
@@ -122,7 +126,6 @@ Here are the steps of the example in detail:
         epoch: 1337
     }));
 ```
-    -   The balances for `production1` and `seller1` are sealed for the relevant epoch, ensuring no retrospective changes and finalizing the settlement.
 
 This approach enables verifiable and immutable transactions within a decentralized, digital marketplace for electricity trading. It contributes to making peer-to-peer energy trading transparent, secure, and efficient.
 
